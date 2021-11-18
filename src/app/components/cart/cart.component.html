@@ -1,0 +1,54 @@
+<div class="cart-container">
+  <div class="empty-cart-message" *ngIf="cartItems.length === 0">
+    <h3>Your shopping cart is empty🧐</h3>
+  </div>
+  <div class="cart-panel" *ngIf="cartItems.length > 0">
+    <div *ngFor="let cItem of cartItems" class="cart-item">
+      <img [src]="cItem.product.url" alt="product photo" />
+      <div class="cart-item-details">
+        <h3>{{ cItem.product.name }}</h3>
+        <p>${{ cItem.product.price }}</p>
+        <p>{{ cItem.product.description }}</p>
+        <input
+          class="number-input form-control"
+          type="number"
+          min="1"
+          (input)="inputChangeHandler(cItem, $event)"
+          [value]="cItem.quantity"/>
+        <br />
+        <button class="btn btn-danger" (click)="removeItem(cItem)">Remove item</button>
+      </div>
+    </div>
+    <p id="total">Total: ${{ itemsPrice }}</p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="submitForm()" *ngIf="cartItems.length > 0">
+    <label for="name">Full Name:</label>
+    <input required minlength="3" maxlength="32" class="form-control"
+    type="text" name="name" placeholder="Minimum 3 characters"
+    [(ngModel)]="fullname"/>
+    <br />
+    <label for="address">Address:</label>
+    <input
+      required
+      minlength="6"
+      maxlength="32"
+      class="form-control"
+      type="text"
+      name="address"
+      placeholder="Minimum 6 characters"
+      [(ngModel)]="address"/>
+    <br />
+    <label for="card">Credit Card Number:</label>
+    <input
+      required
+      pattern="[0-9]{16}"
+      class="form-control"
+      type="number"
+      name="card"
+      placeholder="(16-digit number)"
+      [(ngModel)]="cardNumber"/>
+    <label>We'll never share your payment details with anyone else.</label>
+    <br />
+    <input class="btn btn-primary" [disabled]="form.invalid" type="submit" value="Submit" />
+  </form>
+</div>

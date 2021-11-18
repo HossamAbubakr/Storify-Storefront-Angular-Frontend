@@ -1,0 +1,15 @@
+<div class="product-container">
+  <h3>{{ product.name }}</h3>
+  <img [routerLink]="'products/' + product.id" [src]="product.url" alt="product photo" class="product-image"/>
+  <p>${{ product.price }}</p>
+  <select [(ngModel)]="quantity" name="amount" class="select-input">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <button (click)="sendToCart()" class="btn btn-primary" style="margin-right: 10px">
+    Add to cart
+  </button>
+</div>

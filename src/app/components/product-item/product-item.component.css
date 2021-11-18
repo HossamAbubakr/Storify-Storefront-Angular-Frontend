@@ -1,0 +1,29 @@
+.product-image {
+  list-style-type: none;
+  width: 290px;
+  padding: 20px;
+  margin: 6px 6px;
+  border: 1px solid #33b5e5;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.product-container {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.select-input {
+  width: 104px;
+  margin-bottom: 8px;
+  margin-left: -10px;
+}
