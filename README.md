@@ -1,7 +1,7 @@
 # Storify, Angular Storefront
 
 <p align="center">
-  <img src="">
+  <img src="https://raw.githubusercontent.com/HossamAbubakr/Storify-Storefront-Angular-Frontend/main/logo.png">
 </p>
 
 ## Table of Contents
