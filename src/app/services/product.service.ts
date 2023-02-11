@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:4200/assets/products.json');
+    return this.http.get<Product[]>('/assets/products.json');
   }
 }
